@@ -1,0 +1,46 @@
+// ----------------- Colors -------------------
+
+$color-black: rgb(0, 0, 0);
+$color-black-05: rgba(0, 0, 0, 0.5);
+$color-black-03: rgba(0, 0, 0, 0.3);
+$color-white: rgb(255, 255, 255);
+$color-white-025: rgba(255, 255, 255, 0.25);
+$color-blue: rgb(81, 131, 245);
+$color-blue-05: rgba(81, 130, 245, 0.500);
+$color-grey: rgb(99, 115, 129);
+$color-red: rgb(204, 15, 15);
+$color-brown: rgb(45, 45, 45);
+$color-light-brown: rgb(66, 64, 64);
+
+// ----------------- Colors -------------------
+
+
+
+
+// ----------------- Breakpoints --------------
+
+$breakpoints: (
+  "phone":        400px,
+  "phone-wide":   480px,
+  "phablet":      560px,
+  "tablet-small": 640px,
+  "tablet":       768px,
+  "tablet-wide":  1024px,
+  "desktop":      1248px,
+  "desktop-wide": 1440px
+);
+
+// ----------------- Breakpoints --------------
+
+
+
+
+// ----------------- Z Indexes --------------
+
+$z-indexes: (
+  "modal",
+  "shade",
+  "header"
+);
+
+// ----------------- Z Indexes --------------

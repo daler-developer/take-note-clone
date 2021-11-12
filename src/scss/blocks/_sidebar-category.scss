@@ -1,0 +1,38 @@
+.sidebar-category {
+  & {
+    padding: 6px 15px;
+    color: $color-white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  &:hover &__more-btn {
+    visibility: visible;
+  }
+  &--active {
+    background-color: $color-black-03;
+  }
+  &__body {
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
+    cursor: pointer;
+  }
+  &__name {
+    font-size: 14px;
+  }
+  &__folder-icon, &__more-icon {
+    font-size: 16px;
+  }
+  &__folder-icon {
+    color: $color-blue;
+  }
+  &__more-icon {
+    color: $color-white-025;
+  }
+  &__more-btn {
+    @include flex-center;
+    background-color: transparent;
+    visibility: hidden;
+  }
+}

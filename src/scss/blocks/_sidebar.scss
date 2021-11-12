@@ -1,0 +1,129 @@
+.sidebar {
+  & {
+    background-color: $color-brown;
+    display: flex;
+    flex-direction: column;
+    padding-top: 10px;
+  }
+  &__link, &__add-note-btn, &__categories-title {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  &__add-note-btn {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    display: flex;
+    align-items: center;
+    color: $color-white;
+    column-gap: 10px;
+    font-weight: 600;
+    font-size: 17px;
+
+    .sidebar__add-icon {
+      @include flex-center;
+      width: 20px;
+      height: 20px;
+      font-size: 19px;
+      border-radius: 4px;
+      background-color: $color-blue;
+      color: $color-white;
+    }
+
+    &:hover {
+      background-color: $color-blue;
+    }
+  }
+  &__nav-icon {
+    font-size: 15px;
+    color: $color-white-025
+  }
+  &__nav {
+    margin-top: 20px;
+    font-size: 14px;
+    color: $color-white;
+  }
+  &__nav-links {
+
+  }
+  &__link {
+    height: 40px;
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
+
+    &:hover {
+      background-color: $color-light-brown;
+
+      .sidebar__nav-icon {
+        color: $color-white;
+      }
+    }
+    &--active {
+      background-color: $color-black-03 !important;
+
+      .sidebar__nav-icon {
+        color: $color-blue !important;
+      }
+    }
+  }
+  &__categories-title {
+    line-height: 1em;
+    margin-top: 20px;
+    color: $color-white-025;
+    font-size: 14px;
+    display: flex;
+    justify-content: space-between;
+    user-select: none;
+  }
+  &__arrow-icon {
+    font-size: 20px;
+
+    &--rotated {
+      transform: rotateZ(-90deg);
+    }
+  }
+  &__categories-title-left {
+    cursor: pointer;
+    column-gap: 8px;
+    display: flex;
+    align-items: center;
+    text-transform: uppercase;
+
+    &:hover .sidebar__arrow-icon {
+      color: $color-white;
+    }
+  }
+  &__add-category-btn {
+    @include flex-center;
+
+    &:hover {
+      color: $color-white;
+    }
+
+    .sidebar__add-icon {
+      font-size: 22px;
+    }
+  }
+  &__categories-text {
+
+  }
+  &__categories-list {
+    margin-top: 10px;
+  }
+  &__add-category-form {
+    padding: 0 15px;
+    
+    &--hidden {
+      display: none;
+    }
+  }
+  &__category-name-input {
+    margin-top: 10px;
+    width: 100%;
+    border: 3px solid $color-blue-05;
+    color: $color-white;
+    padding: 8px;
+    font-size: 15px;
+    background-color: $color-black-03;
+  }
+}
