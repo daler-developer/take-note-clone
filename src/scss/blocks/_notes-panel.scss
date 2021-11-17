@@ -1,0 +1,23 @@
+.notes-panel {
+  & {
+    background-color: $color-dark-white;
+  }
+  &__search-input-wrapper {
+    padding: 7px;
+    border-bottom: 1px solid $color-black-03;
+  }
+  &__search-input {
+    width: 100%;
+    min-width: 0;
+    padding: 7px 10px;
+    background-color: $color-white;
+    border-radius: 4px;
+
+    &:focus {
+      box-shadow: 0 0 0 0.2rem $color-blue-05;
+    }
+  }
+  &__notes-list {
+
+  }
+}

@@ -1,0 +1,11 @@
+.category-page {
+  & {
+
+  }
+  &__body {
+    display: flex;
+  }
+  &__notes-panel {
+    width: 350px;
+  }
+}

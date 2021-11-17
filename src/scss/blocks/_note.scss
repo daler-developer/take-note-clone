@@ -1,0 +1,128 @@
+.note {
+  & {
+    padding: 10px;
+    border-bottom: .5px solid $color-black-01;
+    cursor: pointer;
+    display: flex;
+    column-gap: 5px;
+    white-space: nowrap;
+  }
+  &:hover {
+    background-color: $color-black-01;
+  }
+  &--active {
+    background-color: $color-blue !important;
+    color: $color-white;
+  }
+  &__left {
+    padding-top: 2px;
+  }
+  &__center {
+    flex: 1 0 auto;
+    display: block;
+    flex-direction: column;
+  }
+  &__right {
+
+  }
+  &__title {
+    display: flex;
+  }
+  &__category {
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    column-gap: 5px;
+    font-size: 13px;
+
+    &--hidden {
+      visibility: hidden;
+    }
+  }
+  &__category-name {
+
+  }
+  &__open-menu-btn {
+    position: relative;
+  }
+  &__icon {
+    display: block;
+  }
+  &__icon:not(.note__menu-icon) {
+    &.note__star-icon, &.note__more-icon {
+      font-size: 18px;
+    }
+    &.note__more-icon {
+    }
+    &.note__folder-icon {
+
+    }
+  }
+  &__more-icon, &__star-icon {
+
+  }
+  &__more-icon {
+
+  }
+  &__star-icon {
+
+  }
+  &__folder-icon {
+    
+  }
+  &__menu {
+    min-width: 250px;
+    padding: 7px 0;
+    box-shadow: 0 0 10px $color-black-03;
+    border: 1px solid $color-black-03;
+    border-radius: 4px;
+    background-color: $color-white;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: z("popup-menu");
+
+    &--hidden {
+      display: none;
+    }
+  }
+  &__menu-select-wrapper {
+    padding: 0 7px;
+  }
+  &__menu-select {
+    -webkit-appearance: none;
+    text-indent: 5px;
+    width: 100%;
+    padding: 5px;
+    font-size: 17px;
+    border-radius: 3px;
+    border: 1px solid $color-black-03;
+    
+    &:focus {
+      box-shadow: 0 0 0 0.2rem $color-blue-05;
+    }
+  }
+  &__menu-actions {
+    margin-top: 7px;
+    display: flex;
+    flex-direction: column;
+  }
+  &__menu-btn {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
+    padding: 0 10px;
+    height: 35px;
+    font-size: 16px;
+    color: $color-black-07;
+
+    &:hover {
+      background-color: $color-black-01;
+      color: $color-black;
+    }
+  }
+  &__menu-icon {
+    font-size: 20px;
+  }
+}

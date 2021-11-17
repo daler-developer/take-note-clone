@@ -1,15 +1,9 @@
-import { connect, ConnectedProps } from 'react-redux'
-import { RootState } from 'redux/store'
 
-
-
-type Props = PropsFromRedux & {
+type Props = {
 
 }
 
-type PropsFromRedux = ConnectedProps<typeof connector>
-
-const Component = (props: Props) => {
+const C = (props: Props) => {
   return (
     <div>
       
@@ -17,14 +11,4 @@ const Component = (props: Props) => {
   )
 }
 
-const mapStateToProps = (state: RootState) => ({
-  
-})
-
-const mapDispatchToProps = {
-  
-}
-
-const connector = connect(mapStateToProps, mapDispatchToProps)
-
-export default connector(Component)
+export default C

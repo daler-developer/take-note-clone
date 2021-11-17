@@ -1,6 +1,7 @@
-import { SyntheticEvent, useEffect, useRef, useState } from 'react'
+import { FormikErrors, useFormik } from 'formik'
+import { useEffect, useRef, useState } from 'react'
 import { connect, ConnectedProps } from 'react-redux'
-import { Link, NavLink } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 import { categoriesActions, selectCategories } from 'redux/reducers/categoriesReducer'
 import { RootState } from 'redux/store'
 import SidebarCategory from './SidebarCategory'
@@ -13,8 +14,11 @@ type Props = PropsFromRedux & {
 
 type PropsFromRedux = ConnectedProps<typeof connector>
 
+type CreateCategoryFormValues = {
+  name: string
+}
+
 const Sidebar = (props: Props) => {
-  const [categoryNameInputValue, setCategoryNameInputValue] = useState<string>('')
   const [addCategoryFormVisibility, setAddCategoryFormVisibility] = useState<boolean>(false)
   const [categoriesListVisibility, setCategoriesListVisibility] = useState<boolean>(true)
 
@@ -22,6 +26,33 @@ const Sidebar = (props: Props) => {
 
   const documentClickHandlerRef = useRef((e: any) => {
     if ( setAddCategoryFormVisibility && !addCategoryInputRef.current.contains(e.target) ) {
+      setAddCategoryFormVisibility(false)
+    }
+  })
+
+  const createCategoryForm = useFormik({
+    initialValues: {
+      name: ''
+    },
+    validate(v: CreateCategoryFormValues) {
+      const errors: FormikErrors<CreateCategoryFormValues> = {}
+
+      const categoryWithNameExists = (name: string): boolean => {
+        const category = props.categories.find((e) => e.name === name)
+
+        return Boolean(category)
+      }
+
+      if (!v.name.trim()) {
+        errors.name = 'Name is empty'
+      } else if (categoryWithNameExists(v.name.trim())) {
+        errors.name = 'Duplicate name'
+      }
+
+      return errors
+    },
+    onSubmit(v: CreateCategoryFormValues) {
+      props.createCategory(v.name)
       setAddCategoryFormVisibility(false)
     }
   })
@@ -35,31 +66,22 @@ const Sidebar = (props: Props) => {
   }, [addCategoryFormVisibility])
 
   useEffect(() => {
+    if (!addCategoryFormVisibility) {
+      createCategoryForm.resetForm()
+    }
+  }, [addCategoryFormVisibility])
+
+  useEffect(() => {
     if (addCategoryFormVisibility) {
       addCategoryInputRef.current.focus()
     }
   }, [addCategoryFormVisibility])
 
-  const resetForm = () => {
-    setCategoryNameInputValue('')
-  }
-
-  const handleAddCategoryFormSubmit = (e: SyntheticEvent) => {
-    e.preventDefault()
-
-    if (categoryNameInputValue.trim()) {
-      props.createCategory(categoryNameInputValue)
-      resetForm()
-    } else {
-
-    }
-  }
-
   const handleAddCategoryBtnClick = () => {
-    setAddCategoryFormVisibility(true)
+    !addCategoryFormVisibility && setAddCategoryFormVisibility(true)
   }
 
-  const handleCategoriesTitleLeftClick = () => {
+  const handleCategoriesTitleBodyClick = () => {
     setCategoriesListVisibility(!categoriesListVisibility)
   }
 
@@ -109,7 +131,7 @@ const Sidebar = (props: Props) => {
       <div className="sidebar__categories">
 
         <h2 className="sidebar__categories-title">
-          <div className="sidebar__categories-title-left" onClick={handleCategoriesTitleLeftClick}>
+          <div className="sidebar__categories-title-body" onClick={handleCategoriesTitleBodyClick}>
             <span className={`sidebar__icon sidebar__arrow-icon material-icons-outlined ${categoriesListVisibility || 'sidebar__arrow-icon--rotated'}`}>
               expand_more
             </span>
@@ -123,7 +145,7 @@ const Sidebar = (props: Props) => {
         {categoriesListVisibility && (
           <ul className="sidebar__categories-list">
             {props.categories.map((category) => (
-              <li className="sidebar__categories-list-item">
+              <li className="sidebar__categories-list-item" key={category.id}>
                 <SidebarCategory data={category} />
               </li>
             ))}
@@ -132,15 +154,14 @@ const Sidebar = (props: Props) => {
 
         <form
           className={`sidebar__add-category-form ${!addCategoryFormVisibility && 'sidebar__add-category-form--hidden'}`}
-          onSubmit={handleAddCategoryFormSubmit}
+          onSubmit={createCategoryForm.handleSubmit}
         >
           <input
             type="text"
-            className="sidebar__category-name-input"
-            value={categoryNameInputValue}
-            onChange={(e) => setCategoryNameInputValue(e.target.value)}
+            className={`sidebar__category-name-input ${createCategoryForm.touched.name && createCategoryForm.errors.name && 'sidebar__category-name-input--error'}`}
             ref={addCategoryInputRef}
             placeholder="Category name..."
+            {...createCategoryForm.getFieldProps('name')}
           />
         </form>
 

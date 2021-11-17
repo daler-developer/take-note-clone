@@ -4,6 +4,10 @@
     display: flex;
     flex-direction: column;
     padding-top: 10px;
+    user-select: none;
+  }
+  &__icon {
+    display: block;
   }
   &__link, &__add-note-btn, &__categories-title {
     padding-left: 15px;
@@ -17,12 +21,8 @@
     color: $color-white;
     column-gap: 10px;
     font-weight: 600;
-    font-size: 17px;
 
     .sidebar__add-icon {
-      @include flex-center;
-      width: 20px;
-      height: 20px;
       font-size: 19px;
       border-radius: 4px;
       background-color: $color-blue;
@@ -41,9 +41,6 @@
     margin-top: 20px;
     font-size: 14px;
     color: $color-white;
-  }
-  &__nav-links {
-
   }
   &__link {
     height: 40px;
@@ -75,26 +72,7 @@
     justify-content: space-between;
     user-select: none;
   }
-  &__arrow-icon {
-    font-size: 20px;
-
-    &--rotated {
-      transform: rotateZ(-90deg);
-    }
-  }
-  &__categories-title-left {
-    cursor: pointer;
-    column-gap: 8px;
-    display: flex;
-    align-items: center;
-    text-transform: uppercase;
-
-    &:hover .sidebar__arrow-icon {
-      color: $color-white;
-    }
-  }
   &__add-category-btn {
-    @include flex-center;
 
     &:hover {
       color: $color-white;
@@ -104,8 +82,23 @@
       font-size: 22px;
     }
   }
-  &__categories-text {
+  &__arrow-icon {
+    font-size: 20px;
 
+    &--rotated {
+      transform: rotateZ(-90deg);
+    }
+  }
+  &__categories-title-body {
+    cursor: pointer;
+    column-gap: 8px;
+    display: flex;
+    align-items: center;
+    text-transform: uppercase;
+
+    &:hover .sidebar__arrow-icon {
+      color: $color-white;
+    }
   }
   &__categories-list {
     margin-top: 10px;
@@ -125,5 +118,9 @@
     padding: 8px;
     font-size: 15px;
     background-color: $color-black-03;
+
+    &--error {
+      border-color: $color-red !important;
+    }
   }
 }

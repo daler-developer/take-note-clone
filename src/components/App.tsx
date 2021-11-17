@@ -3,6 +3,7 @@ import { RootState } from 'redux/store'
 import { Switch, Route, Redirect } from 'react-router-dom'
 import 'scss/index.scss'
 import ScatchpadPage from './ScatchpadPage'
+import CategoryPage from './CategoryPage'
 
 
 
@@ -23,6 +24,10 @@ const App = (props: Props) => {
 
         <Route path="/scatchpad" exact>
           <ScatchpadPage />
+        </Route>
+
+        <Route path="/category/:id">
+          <CategoryPage />
         </Route>
 
       </Switch>

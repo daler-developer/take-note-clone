@@ -1,38 +1,107 @@
 .sidebar-category {
+  * {
+    background-color: transparent;
+  }
   & {
-    padding: 6px 15px;
+    padding: 0 15px;
+    height: 34px;
     color: $color-white;
     display: flex;
     align-items: center;
     justify-content: space-between;
   }
-  &:hover &__more-btn {
-    visibility: visible;
+  &:hover {
+    background-color: $color-light-brown;
+
+    .sidebar-category__more-btn {
+      visibility: visible;
+    }
   }
   &--active {
     background-color: $color-black-03;
   }
   &__body {
+    align-self: stretch;
+    flex-grow: 1;
     display: flex;
     align-items: center;
     column-gap: 10px;
     cursor: pointer;
+    overflow: hidden;
+    white-space: nowrap;
   }
   &__name {
     font-size: 14px;
+    flex-grow: 1;
+    background-color: transparent;
+  }
+  &__rename-form {
+    flex-grow: 1;
+  }
+  &__rename-input {
+    padding: 4px;
+    height: 100%;
+    border: 3px solid $color-blue-05;
+    background-color: $color-black-03;
+
+    &--error {
+      border-color: $color-red !important;
+    }
+  }
+  &__menu {
+    min-width: 220px;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: $color-brown;
+    box-shadow: 0 0 10px $color-black-03;
+    border-radius: 4px;
+    padding: 5px 0;
+    z-index: z('popup-menu');
+
+    &--hidden {
+      display: none;
+    }
+  }
+  &__open-menu-btn {
+    background-color: transparent;
+    position: relative;
+    cursor: pointer;
+  }
+  &__menu-btn {
+    display: flex;
+    align-items: center;
+    column-gap: 15px;
+    text-align: left;
+    padding: 10px 15px;
+    white-space: nowrap;
+    letter-spacing: .6px;
+    font-size: 14px;
+  }
+  &__menu-edit-btn {
+
+    &:hover {
+      background-color: $color-light-brown;
+    }
+  }
+  &__menu-delete-btn {
+    
+    &:hover {
+      background-color: $color-red;
+    }
+  }
+  &__icon {
+    display: block;
   }
   &__folder-icon, &__more-icon {
     font-size: 16px;
   }
-  &__folder-icon {
-    color: $color-blue;
-  }
   &__more-icon {
     color: $color-white-025;
   }
-  &__more-btn {
-    @include flex-center;
-    background-color: transparent;
-    visibility: hidden;
+  &__folder-icon {
+    color: $color-blue;
   }
 }
