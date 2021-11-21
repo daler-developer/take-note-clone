@@ -18,7 +18,7 @@
     }
   }
   &--active {
-    background-color: $color-black-03;
+    background-color: $color-black-03 !important;
   }
   &__body {
     align-self: stretch;
@@ -34,6 +34,9 @@
     font-size: 14px;
     flex-grow: 1;
     background-color: transparent;
+    align-self: stretch;
+    display: flex;
+    align-items: center;
   }
   &__rename-form {
     flex-grow: 1;

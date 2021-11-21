@@ -1,5 +1,6 @@
 import { connect, ConnectedProps } from 'react-redux'
 import { RootState } from 'redux/store'
+import Editor from './Editor'
 import Layout from './Layout'
 
 
@@ -13,7 +14,10 @@ type PropsFromRedux = ConnectedProps<typeof connector>
 const ScatchpadPage = (props: Props) => {
   return (
     <Layout classes={{ root: 'scatchpad-page', body: 'scatchpad-page__body' }}>
-      <h2>Hello World</h2>
+      <Editor
+        classes={{ root: 'scatchpad-page__editor' }}
+        isScatchpad={true}
+      />
     </Layout>
   )
 }

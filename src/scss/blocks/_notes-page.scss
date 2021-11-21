@@ -1,6 +1,12 @@
-.scatchpad-page {
+.notes-page {
+  & {
+
+  }
   &__body {
     display: flex;
+  }
+  &__notes-panel {
+    width: 350px;
   }
   &__editor {
     flex: 1 0 0;

@@ -9,11 +9,11 @@
   &__icon {
     display: block;
   }
-  &__link, &__add-note-btn, &__categories-title {
+  &__link, &__new-note-btn, &__categories-title {
     padding-left: 15px;
     padding-right: 15px;
   }
-  &__add-note-btn {
+  &__new-note-btn {
     padding-top: 15px;
     padding-bottom: 15px;
     display: flex;
@@ -63,15 +63,6 @@
       }
     }
   }
-  &__categories-title {
-    line-height: 1em;
-    margin-top: 20px;
-    color: $color-white-025;
-    font-size: 14px;
-    display: flex;
-    justify-content: space-between;
-    user-select: none;
-  }
   &__add-category-btn {
 
     &:hover {
@@ -89,6 +80,21 @@
       transform: rotateZ(-90deg);
     }
   }
+  &__categories {
+    flex: 1 0 0;
+    display: flex;
+    flex-direction: column;
+  }
+  &__categories-title {
+    flex: 0 0 auto;
+    line-height: 1em;
+    margin-top: 20px;
+    color: $color-white-025;
+    font-size: 14px;
+    display: flex;
+    justify-content: space-between;
+    user-select: none;
+  }
   &__categories-title-body {
     cursor: pointer;
     column-gap: 8px;
@@ -101,6 +107,8 @@
     }
   }
   &__categories-list {
+    flex: 1 0 0;
+    overflow: auto;
     margin-top: 10px;
   }
   &__add-category-form {

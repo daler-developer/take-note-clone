@@ -1,12 +1,12 @@
-.category-page {
+.trash-page {
   & {
-
+    
   }
   &__body {
     display: flex;
   }
   &__notes-panel {
-    width: 350px;
+    flex: 0 0 350px;
   }
   &__editor {
     flex: 1 0 0;

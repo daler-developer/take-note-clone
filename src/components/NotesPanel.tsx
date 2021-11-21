@@ -1,5 +1,6 @@
 import { useState } from 'react'
-import { NoteType, selectNotesByTitleIncludes } from 'redux/reducers/notesReducer'
+import { useDispatch } from 'react-redux'
+import { notesActions, NoteType } from 'redux/reducers/notesReducer'
 import Note from './Note'
 
 
@@ -7,14 +8,26 @@ type Props = {
   classes?: {
     root?: string
   },
-  notes: NoteType[]
+  notes: NoteType[],
+  withClearNotesBtn?: boolean
 }
 
 const NotesPanel = (props: Props) => {
+  const dispatch = useDispatch()
+
   const [searchInputValue, setSearchInputValue] = useState<string>('')
 
   const filteredNotes = (): NoteType[] => {
-    return props.notes.filter((note) => note.title?.includes(searchInputValue))
+    if (searchInputValue.trim()) {
+      return props.notes.filter((note) => note.title?.includes(searchInputValue))
+    }
+    return props.notes
+  }
+
+  const handlers = {
+    handleEmptyBtnClick() {
+      dispatch(notesActions.deleteNotesInTrash())
+    }
   }
 
   return (
@@ -28,11 +41,16 @@ const NotesPanel = (props: Props) => {
           value={searchInputValue}
           onChange={(e) => setSearchInputValue(e.target.value)}
         />
+        {props.withClearNotesBtn && (
+          <button className="notes-panel__empty-btn" type="button" onClick={handlers.handleEmptyBtnClick}>
+            Empty
+          </button>
+        )}
       </div>
 
       <ul className="notes-panel__notes-list">
         {filteredNotes().map((note) => (
-          <li>
+          <li key={note.id}>
             <Note data={note} />
           </li>
         ))}

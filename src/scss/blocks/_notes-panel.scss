@@ -1,23 +1,41 @@
 .notes-panel {
   & {
     background-color: $color-dark-white;
+    border-right: 1px solid $color-black-01;
+    display: flex;
+    flex-direction: column;
   }
   &__search-input-wrapper {
     padding: 7px;
-    border-bottom: 1px solid $color-black-03;
+    border-bottom: 1px solid $color-black-01;
+    display: flex;
+    column-gap: 8px;
+    flex: 0 0 50px;
   }
   &__search-input {
-    width: 100%;
+    flex: 1 0 auto;
     min-width: 0;
-    padding: 7px 10px;
     background-color: $color-white;
     border-radius: 4px;
+    text-indent: 7px;
 
     &:focus {
       box-shadow: 0 0 0 0.2rem $color-blue-05;
     }
   }
-  &__notes-list {
+  &__empty-btn {
+    flex: 0 0 auto;
+    padding: 0 8px;
+    border-radius: 5px;
+    background-color: $color-black-005;
 
+    &:hover {
+      background-color: $color-light-red !important;
+      color: $color-white;
+    }
+  }
+  &__notes-list {
+    flex: 1 0 0;
+    
   }
 }

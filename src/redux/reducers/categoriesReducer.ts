@@ -13,13 +13,46 @@ const initialState: CategoriesState = [
   { id: 'cat001', name: 'Home' },
   { id: 'cat002', name: 'Inha' },
   { id: 'cat003', name: 'West' },
+  // { id: 'cat004', name: 'West' },
+  // { id: 'cat005', name: 'West' },
+  // { id: 'cat006', name: 'West' },
+  // { id: 'cat007', name: 'West' },
+  // { id: 'cat008', name: 'West' },
+  // { id: 'cat009', name: 'West' },
+  // { id: 'cat009', name: 'West' },
+  // { id: 'cat009', name: 'West' },
+  // { id: 'cat009', name: 'West' },
+  // { id: 'cat009', name: 'West' },
+  // { id: 'cat009', name: 'West' },
+  // { id: 'cat009', name: 'West' },
+  // { id: 'cat009', name: 'West' },
+  // { id: 'cat009', name: 'West' },
+  // { id: 'cat009', name: 'West' },
+  // { id: 'cat009', name: 'West' },
+  // { id: 'cat009', name: 'West' },
+  // { id: 'cat009', name: 'West' },
+  // { id: 'cat009', name: 'West' },
+  // { id: 'cat009', name: 'West' },
+  // { id: 'cat009', name: 'West' },
+  // { id: 'cat009', name: 'West' },
+  // { id: 'cat009', name: 'West' },
+  // { id: 'cat009', name: 'West' },
+  // { id: 'cat009', name: 'West' },
+  // { id: 'cat009', name: 'West' },
+  // { id: 'cat009', name: 'West' },
+  // { id: 'cat009', name: 'West' },
+  // { id: 'cat009', name: 'West' },
+  // { id: 'cat009', name: 'West' },
+  // { id: 'cat009', name: 'West' },
+  // { id: 'cat009', name: 'West' },
+  // { id: 'cat009', name: 'West' },
 ]
 
 const categoriesSlice = createSlice({
   name: 'categories',
   initialState,
   reducers: {
-    addCategory: {
+    createCategory: {
       reducer(state, action: PayloadAction<Category>) {
         state.push(action.payload)
       },

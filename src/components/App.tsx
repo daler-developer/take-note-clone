@@ -4,6 +4,9 @@ import { Switch, Route, Redirect } from 'react-router-dom'
 import 'scss/index.scss'
 import ScatchpadPage from './ScatchpadPage'
 import CategoryPage from './CategoryPage'
+import NotesPage from './NotesPage'
+import TrashPage from './TrashPage'
+import FavoritesPage from './FavoritesPage'
 
 
 
@@ -26,8 +29,20 @@ const App = (props: Props) => {
           <ScatchpadPage />
         </Route>
 
-        <Route path="/category/:id">
+        <Route path="/notes" exact>
+          <NotesPage />
+        </Route>
+
+        <Route path="/category/:id" exact>
           <CategoryPage />
+        </Route>
+
+        <Route path="/trash" exact>
+          <TrashPage />
+        </Route>
+
+        <Route path="/favorites" exact>
+          <FavoritesPage />
         </Route>
 
       </Switch>

@@ -1,7 +1,7 @@
 import { FormikErrors, useFormik } from 'formik'
-import { useEffect, useRef, useState } from 'react'
+import { SyntheticEvent, useEffect, useRef, useState } from 'react'
 import { connect, ConnectedProps } from 'react-redux'
-import { NavLink, useRouteMatch } from 'react-router-dom'
+import { Link, useRouteMatch } from 'react-router-dom'
 import { categoriesActions, Category, selectCategories } from 'redux/reducers/categoriesReducer'
 import { RootState } from 'redux/store'
 
@@ -92,7 +92,8 @@ const SidebarCategory = (props: Props) => {
     renameCategoryForm.setValues({ name: props.data.name })
   }
 
-  const handleMoreBtnClick = () => {
+  const handleMoreBtnClick = (e: SyntheticEvent) => {
+
     !menuVisibility && setMenuVisibility(true)
   }
 
@@ -120,13 +121,12 @@ const SidebarCategory = (props: Props) => {
             />
           </form>
         ) : (
-          <NavLink
+          <Link
             to={`/category/${props.data.id}`}
             className="sidebar-category__name"
-            activeClassName="sidebar-category--active"
           >
             {props.data.name}
-          </NavLink>
+          </Link>
         )}
       </div>
       <div className="sidebar-category__open-menu-btn" onClick={handleMoreBtnClick}>
