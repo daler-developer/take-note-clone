@@ -22,11 +22,7 @@ const App = (props: Props) => {
       <Switch>
 
         <Route path="/" exact>
-          <Redirect to="/scatchpad" />
-        </Route>
-
-        <Route path="/scatchpad" exact>
-          <ScatchpadPage />
+          <Redirect to="/notes" />
         </Route>
 
         <Route path="/notes" exact>
