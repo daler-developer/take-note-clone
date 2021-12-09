@@ -1,31 +1,24 @@
-# Take Note Clone
+# Welcome to Take Note Clone 👋
+![Version](https://img.shields.io/badge/version-1.0-blue.svg?cacheSeconds=2592000)
+[![Twitter: dalersaidov](https://img.shields.io/twitter/follow/dalersaidov.svg?style=social)](https://twitter.com/dalersaidov)
 
-Welcome to audio player, made using React!
+> Emtpy desc
 
-## Demo:
+### 🏠 [Homepage](http:google.com)
 
-![Preview](/preview.jpg)  
-**Link: https://daler-developer.github.io/take-note-clone/**
+### ✨ [Demo](htttp:demo)
 
-## Tech Stack:
+## Author
 
-- HTML5
-- CSS3
-- Sass
-- TypeScript
-- React(Redux + Redux toolkit)
-- Material Icons
+👤 **Daler**
 
-## Features:
+* Twitter: [@dalersaidov](https://twitter.com/dalersaidov)
+* Github: [@daler-developer](https://github.com/daler-developer)
 
-- Adding, deleting, editing notes and categories
-- Rich designed scatchpad
-- Many more...
- 
-And many more...
+## Show your support
 
-## Other info
+Give a ⭐️ if this project helped you!
 
-Total time taken to complete: *~15 hours*  
-Completed on the first attempt: *Yes*  
-Code quality and readability: *8/10*
+
+***
+_This README was generated with ❤️ by [readme-md-generator](https://github.com/kefranabg/readme-md-generator)_
