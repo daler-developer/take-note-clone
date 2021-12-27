@@ -1,24 +1,45 @@
-# Welcome to Take Note Clone 👋
-![Version](https://img.shields.io/badge/version-1.0-blue.svg?cacheSeconds=2592000)
-[![Twitter: dalersaidov](https://img.shields.io/twitter/follow/dalersaidov.svg?style=social)](https://twitter.com/dalersaidov)
+# Welcome to Image Gallery 👋
+![Version](https://img.shields.io/badge/version-1.0.0-blue.svg?cacheSeconds=2592000)
+[![Twitter: DalerSaidov2003](https://img.shields.io/twitter/follow/DalerSaidov2003.svg?style=social)](https://twitter.com/DalerSaidov2003)
 
-> Emtpy desc
+> A Take Note app clone for creating, deleting, updating notes!
 
-### 🏠 [Homepage](http:google.com)
+### 🏠 [Homepage](https://daler-developer.github.io/take-note-clone)
 
-### ✨ [Demo](htttp:demo)
+### ✨ [Demo](/preview.jpg)
+
+## Install
+
+```sh
+npm install
+```
+
+## Usage
+
+```sh
+npm start
+```
+
+## Run tests
+
+```sh
+npm run test
+```
+
+## Tech Stack
+
+- React
+- TypeScript
+- Sass
 
 ## Author
 
-👤 **Daler**
+👤 **Saidov Daler**
 
-* Twitter: [@dalersaidov](https://twitter.com/dalersaidov)
+* Twitter: [@DalerSaidov2003](https://twitter.com/DalerSaidov2003)
 * Github: [@daler-developer](https://github.com/daler-developer)
 
 ## Show your support
 
 Give a ⭐️ if this project helped you!
 
-
-***
-_This README was generated with ❤️ by [readme-md-generator](https://github.com/kefranabg/readme-md-generator)_
