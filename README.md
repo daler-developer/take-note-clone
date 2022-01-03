@@ -1,4 +1,4 @@
-# Image Gallery(MERN)
+# Take Note Clone
 
 Welcome to [Take Note](https://takenote.dev/app) clone, where you can upload images and manipulate them 👋
  
